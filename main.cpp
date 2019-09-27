@@ -17,7 +17,4 @@ int main()
 
     obj.creater();
 
-    person obj2;
-    obj2.creater();
-
 }
