@@ -13,17 +13,25 @@ using namespace std;
 
 void debit_credit::login()
 {
+	bool d=0;
 
     ifstream fin("acc_info.csv" , ios::in);
     string CRN;
-    //int count=0;
+    int count=0;
 
-    std::cout<< "ENTER YOUR CRN "<<endl;
-    getline(cin, CRN);
+
+	std::cout<< "ENTER YOUR CRN "<<endl;
+    getline(cin, usrname);
     cin.ignore();
+
+
+    std::cout<< "ENTER YOUR PASSWORD "<<endl;
+    getline(cin, pswrd);
+    
 
     vector<string> row;
     string line, word, temp;
+
 
     while (fin >> temp)
     {
@@ -35,27 +43,35 @@ void debit_credit::login()
 
         stringstream s(line);
        // cout<<"printing words\n";
+
+	   row.clear();
         
-        while (getline(s, word, ','))
-        {
-           cout<<word<<endl;
-            //add all the column data of row to a vector;
-            row.push_back(word);
-          //  cout << word;  182179751287
-        }
-                 //  cout<<row[7]<<endl;
+        while (getline(s, word, ','))	
+		{
+          	  row.reserve(8);
+          		  //add all the column data of row to a vector;
+         	   row.push_back(word);
+				count++;
+				
+				
+		}
 
+		if(usrname==row[6])
+		{
+					if(pswrd==row[7])
+						d=1;
+		
+		}
 
+		
+	
+	}
+		if(d==1)
+			cout<<"login successful"<<endl;
+		else
+		{
+				cout<<"sorry, wrong username or password"<<endl;
+		}
+		
 
-       // if(row[6] == CRN){
-
-       //for(auto i = row.begin() ; i!= row.end(); i++)
-          //  cout<<*i<<endl;
-           // }
-         //  cout<<row[7]<<endl;
-
-     //  std::cout<<"sorry invalid username or password\n";
-       // }
-    }
-    
 }
