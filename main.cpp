@@ -17,13 +17,14 @@ int main()
     // xl1<<"NAME , ACC_NO , CRN , PASSWORD , MOBILE_NO , EMAIL_ID , RESIDENTIAL_ADDRESS "<<endl;
     // xl1.close();
 
-    //person obj;
-
-      debit_credit dcobj;
-
-      dcobj.login();
+     //person obj;
 
      //obj.creater();
+
+     debit_credit dcobj;
+
+     dcobj.login();
+
     
 
 
