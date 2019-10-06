@@ -6,17 +6,19 @@
 #include <iomanip>
 #include <vector>
 #include <cstdio>
+#include <bits/stdc++.h> 
+
 
 using namespace std;
 
 void debit_credit::login()
 {
 
-    fstream fin("acc_info.csv");
+    ifstream fin("acc_info.csv" , ios::in);
     string CRN;
     //int count=0;
 
-   std::cout<< "ENTER YOUR CRN "<<endl;
+    std::cout<< "ENTER YOUR CRN "<<endl;
     getline(cin, CRN);
     cin.ignore();
 
@@ -25,32 +27,35 @@ void debit_credit::login()
 
     while (fin >> temp)
     {
-
-        row.clear();
         //read entire row nd store it in string var;
         getline(fin, line);
 
+        //cout<<"line is containing : "<<line<<endl;
         //used for breaking words;
 
         stringstream s(line);
-
+       // cout<<"printing words\n";
+        
         while (getline(s, word, ','))
         {
-
-            //add all the column data of row t a vector;
+           cout<<word<<endl;
+            //add all the column data of row to a vector;
             row.push_back(word);
           //  cout << word;  182179751287
         }
+                 //  cout<<row[7]<<endl;
 
 
-      //  if(row[2] == CRN){
 
-           cout<<row[7]<<endl;
+       // if(row[6] == CRN){
 
-            }
+       //for(auto i = row.begin() ; i!= row.end(); i++)
+          //  cout<<*i<<endl;
+           // }
+         //  cout<<row[7]<<endl;
 
-       std::cout<<"sorry invalid username or password\n";
-
+     //  std::cout<<"sorry invalid username or password\n";
+       // }
     }
     
-
+}

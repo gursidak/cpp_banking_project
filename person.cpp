@@ -73,8 +73,8 @@ cout<<"ENTER YOUR EMAIL_ID\n";
      cout<<endl;
       cout<<endl;
 
-    acc_no = 910000000000 + mobile_no;
-    crn = (acc_no/5);
+    acc_no = 910000000000 + mobile_no; //generating acc no;
+    crn = (acc_no/5);                  //generating crn;
 
      cout<<"YOUR ACCOUNT CREATED SUCCESSFULLY "<<endl<<"YOUR ACC_NO IS : "<<acc_no<<endl;
 
