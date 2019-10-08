@@ -11,9 +11,28 @@
 
 using namespace std;
 
+
+    int debit_credit::check(int x , int y , int z){
+            if(z<x || z>y)
+            {	
+                cout<<"eror choose an appropriate option"<<endl;
+                cin>>z;
+                check(x,y,z);
+            }
+            else
+            {
+                return z;
+            }
+            
+
+        }
+
+
+
 void debit_credit::login()
 {
 	bool d=0;
+	int opt;
 
     ifstream fin("acc_info.csv" , ios::in);
     string CRN;
@@ -60,18 +79,35 @@ void debit_credit::login()
 		{
 					if(pswrd==row[7])
 						d=1;
+						break;
 		
 		}
 
 		
 	
 	}
+		cout<<row[6]<<endl<<row[7]<<endl;
 		if(d==1)
 			cout<<"login successful"<<endl;
 		else
 		{
 				cout<<"sorry, wrong username or password"<<endl;
 		}
+
+		cout<<"PRESS 1 FOR CREDIT "<<endl<<"PRESS 2 FOR DEBIT "<<endl;
+		cin>>opt;
+		opt = check(1,2,opt);
+
+        switch (opt)
+        {
+        case 1:
+            cout<<row[8]<<endl;
+            break;
+        
+        default:
+            break;
+        }
+
 		
 
 }

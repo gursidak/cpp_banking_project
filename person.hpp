@@ -22,6 +22,7 @@ class person {
         double balance=0.0;
 
         string email_id;
+        
 
         
 
