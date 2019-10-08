@@ -11,19 +11,46 @@
 
 using namespace std;
 
+
+    int debit_credit::check(int x , int y , int z){
+            if(z<x || z>y)
+            {	
+                cout<<"eror choose an appropriate option"<<endl;
+                cin>>z;
+                check(x,y,z);
+            }
+            else
+            {
+                return z;
+            }
+            
+
+        }
+
+
+
 void debit_credit::login()
 {
+	bool d=0;
+	int opt;
 
     ifstream fin("acc_info.csv" , ios::in);
     string CRN;
-    //int count=0;
+    int count=0;
 
-    std::cout<< "ENTER YOUR CRN "<<endl;
-    getline(cin, CRN);
+
+	std::cout<< "ENTER YOUR CRN "<<endl;
+    getline(cin, usrname);
     cin.ignore();
+
+
+    std::cout<< "ENTER YOUR PASSWORD "<<endl;
+    getline(cin, pswrd);
+    
 
     vector<string> row;
     string line, word, temp;
+
 
     while (fin >> temp)
     {
@@ -35,27 +62,52 @@ void debit_credit::login()
 
         stringstream s(line);
        // cout<<"printing words\n";
+
+	   row.clear();
         
-        while (getline(s, word, ','))
+        while (getline(s, word, ','))	
+		{
+          	  row.reserve(8);
+          		  //add all the column data of row to a vector;
+         	   row.push_back(word);
+				count++;
+				
+				
+		}
+
+		if(usrname==row[6])
+		{
+					if(pswrd==row[7])
+						d=1;
+						break;
+		
+		}
+
+		
+	
+	}
+		cout<<row[6]<<endl<<row[7]<<endl;
+		if(d==1)
+			cout<<"login successful"<<endl;
+		else
+		{
+				cout<<"sorry, wrong username or password"<<endl;
+		}
+
+		cout<<"PRESS 1 FOR CREDIT "<<endl<<"PRESS 2 FOR DEBIT "<<endl;
+		cin>>opt;
+		opt = check(1,2,opt);
+
+        switch (opt)
         {
-           cout<<word<<endl;
-            //add all the column data of row to a vector;
-            row.push_back(word);
-          //  cout << word;  182179751287
+        case 1:
+            cout<<row[8]<<endl;
+            break;
+        
+        default:
+            break;
         }
-                 //  cout<<row[7]<<endl;
 
+		
 
-
-       // if(row[6] == CRN){
-
-       //for(auto i = row.begin() ; i!= row.end(); i++)
-          //  cout<<*i<<endl;
-           // }
-         //  cout<<row[7]<<endl;
-
-     //  std::cout<<"sorry invalid username or password\n";
-       // }
-    }
-    
 }
