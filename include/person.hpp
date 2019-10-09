@@ -4,22 +4,18 @@ using namespace std;
 class person {
 
     public:
-   
-
-        void creater();
+        void create_acc();
+        
         int x=5;
 
     protected:
-
         void show_acc_info(const unsigned long int);
 
-        unsigned long  int acc_no=0 , crn=0 ;
-
         string firstname , middlename , lastname , address  , pan_no , fname ;
-        string password ;
+        string password, mobile_no ;
+        string acc_no, crn, balance= "100";
        
-        unsigned long  int mobile_no=0 ;
-        double balance=0.0;
+        //double balance = 100.0;
 
         string email_id;
         

@@ -6,6 +6,7 @@
 #include<iomanip>
 #include<vector>
 #include<cstdio>
+#include<string>
 
 using namespace std;
 
@@ -20,18 +21,16 @@ void investments();
 
 int main()
 {  
+   cout << "Welcome to bank_name " << endl;
+   cout << "tag_line " << endl;
+   cout << "How can we help you?: "<< endl;
    welcome();
    return 0;
 }
 
 void welcome(){
-   int ch= 1;
-   cout << "Welcome to bank_name " << endl;
-   cout << " tag_line " << endl;
-   cout << "How we can help you?: "<< endl;
-
-   do{
-      cout << "1.Accounts\n "
+   int ch = 0;
+      cout << "1.Accounts\n"
            << "2.Deposit\n"
            << "3.Cards\n"
            << "4.Loans\n"
@@ -41,22 +40,17 @@ void welcome(){
       cout<< "Enter your choice( 0 to quit): ";
       cin >> ch;
 
-   }while(ch);
-
    after_user_choice(ch);
 }
-
-void deposit(){
-   debit_credit dobj;
-   dobj.login();
-}
-
 
 
 void after_user_choice(int c){
    
    switch (c)
    {
+   case 0: break;
+      
+
    case 1: accounts() ;
       break;
    
@@ -76,7 +70,8 @@ void after_user_choice(int c){
    case 6:// investments();
       break;      
 
-   default:
+   default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
+            welcome();
       break;
    }
 
@@ -84,6 +79,11 @@ void after_user_choice(int c){
 
 void accounts(){
    person p;
+}
+
+void deposit(){
+   debit_credit dobj;
+   dobj.login();
 }
 
 
