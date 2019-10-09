@@ -25,6 +25,8 @@ int main()
 
      dcobj.login();
 
+      dcobj.credit_debit();
+
     
 
 

@@ -70,7 +70,7 @@ void debit_credit::login()
           	  row.reserve(8);
           		  //add all the column data of row to a vector;
          	   row.push_back(word);
-				count++;
+				//count++;
 				
 				
 		}
@@ -86,28 +86,19 @@ void debit_credit::login()
 		
 	
 	}
-		cout<<row[6]<<endl<<row[7]<<endl;
 		if(d==1)
 			cout<<"login successful"<<endl;
 		else
-		{
-				cout<<"sorry, wrong username or password"<<endl;
-		}
+        	cout<<"sorry, wrong username or password"<<endl;
+		
+}
 
-		cout<<"PRESS 1 FOR CREDIT "<<endl<<"PRESS 2 FOR DEBIT "<<endl;
+void debit_credit::credit_debit(){
+
+
+    	cout<<"PRESS 1 FOR CREDIT "<<endl<<"PRESS 2 FOR DEBIT "<<endl;
 		cin>>opt;
 		opt = check(1,2,opt);
+         
 
-        switch (opt)
-        {
-        case 1:
-            cout<<row[8]<<endl;
-            break;
-        
-        default:
-            break;
-        }
-
-		
-
-}
+         }

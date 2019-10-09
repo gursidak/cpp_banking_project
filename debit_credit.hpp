@@ -7,6 +7,7 @@ class debit_credit : public person{
 
     public:
         void login();
+        void credit_debit();
 
 
 
@@ -16,6 +17,7 @@ class debit_credit : public person{
 
     protected:
         int check(int x , int y , int z);
+    
         int choosen;
         int opt;
 };
