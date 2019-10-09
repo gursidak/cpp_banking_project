@@ -20,7 +20,7 @@ void investments();
 
 int main()
 {  
-
+   welcome();
    return 0;
 }
 
@@ -46,7 +46,44 @@ void welcome(){
    after_user_choice(ch);
 }
 
-void after_user_choice(){
+void deposit(){
+   debit_credit dobj;
+   dobj.login();
+}
+
+
+
+void after_user_choice(int c){
    
+   switch (c)
+   {
+   case 1: accounts() ;
+      break;
+   
+   case 2: deposit() ;
+      
+      break;
+   
+   case 3:// cards();
+      break;
+
+   case 4:// loans();
+      break;
+
+   case 5: //insurance();
+      break;
+
+   case 6:// investments();
+      break;      
+
+   default:
+      break;
+   }
 
 }
+
+void accounts(){
+   person p;
+}
+
+

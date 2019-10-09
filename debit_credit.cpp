@@ -68,6 +68,7 @@ void debit_credit::login()
         
         while (getline(s, word, ','))	
 		{
+                cout << "i m a word"<<word<<endl;
           	  row.reserve(8);
           		  //add all the column data of row to a vector;
          	   row.push_back(word);
