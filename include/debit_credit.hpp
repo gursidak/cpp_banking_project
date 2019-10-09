@@ -1,7 +1,3 @@
-
-
-using namespace std;
-
 class debit_credit : public person{
 
 
