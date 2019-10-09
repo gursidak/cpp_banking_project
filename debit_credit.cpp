@@ -41,7 +41,7 @@ void debit_credit::login()
 
 	std::cout<< "ENTER YOUR CRN "<<endl;
     getline(cin, usrname);
-    cin.ignore();
+    //cin.ignore();
 
 
     std::cout<< "ENTER YOUR PASSWORD "<<endl;
@@ -58,6 +58,7 @@ void debit_credit::login()
         getline(fin, line);
 
         //cout<<"line is containing : "<<line<<endl;
+
         //used for breaking words;
 
         stringstream s(line);
@@ -79,7 +80,7 @@ void debit_credit::login()
 		{
 					if(pswrd==row[7])
 						d=1;
-						break;
+						//break;
 		
 		}
 

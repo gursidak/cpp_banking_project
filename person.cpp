@@ -20,8 +20,8 @@ using namespace std;
 void person::creater(){
 
 
-      ofstream xl("acc_info.csv" , ios_base::app );
-
+      ofstream xl("acc_info.csv" , ios::app );
+      //xl<< endl;
      cout<<"ENTER FIRST NAME\n";
      getline(cin,firstname);
       cin.ignore();
@@ -35,7 +35,7 @@ void person::creater(){
      cout<<"ENTER MIDDLE NAME \n";
      getline(cin,middlename);
      cout<<endl;     
-     cin.ignore();          // scanf("%s",middlename);    
+    // cin.ignore();          // scanf("%s",middlename);    
   
      
 
@@ -48,30 +48,30 @@ void person::creater(){
 
      cout<<"ENTER FATHER'S NAME "<<endl;
      getline(cin,fname);          //scanf(" %s",fname);    
-     cin.ignore();
+     //cin.ignore();
      cout<<endl;
 
      
 cout<<"ENTER YOUR EMAIL_ID\n";
      getline(cin,email_id);
-     cin.ignore();
+    // cin.ignore();
      cout<<endl;
 
      cout<<"ENTER PAN CARD NUMBER"<<endl;
      getline(cin,pan_no);
-     cin.ignore();               //scanf(" %s",pan_no);    
+    // cin.ignore();               //scanf(" %s",pan_no);    
      cout<<endl;
 
      cout<<"ENTER YOUR RESIDENTIAL ADDRESS"<<endl;
      getline(cin,address);                    //scanf(" %s",address);    
-     cin.ignore();
+    // cin.ignore();
      cout<<endl;
 
      cout<<"ENTER YOUR MOBILE NUMBER "<<endl;
      cin>> mobile_no;
      cin.ignore();
      cout<<endl;
-      cout<<endl;
+     // cout<<endl;
 
     acc_no = 910000000000 + mobile_no; //generating acc no;
     crn = (acc_no/5);                  //generating crn;
