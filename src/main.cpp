@@ -6,7 +6,7 @@
 #include<cstdio>
 #include<string>
 
-#include"person.hpp"
+#include "person.hpp"
 #include "accounts.hpp"
 #include "deposits.hpp"
 #include "insurance.hpp"
@@ -65,7 +65,7 @@ void after_user_choice(int c){
       
       break;
    
-   case 3:// cards();
+   case 3: cards();
       break;
 
    case 4:// loans();
@@ -91,6 +91,13 @@ void accounts(){
 void deposit(){
    debit_credit dobj;
    dobj.login();
+}
+
+void cards(){
+
+   debit_credit dc;
+   dc.login();
+   
 }
 
 

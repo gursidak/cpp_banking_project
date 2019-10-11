@@ -6,7 +6,7 @@
 #include<cstdio>
 #include<string>
 
-#include"person.hpp"
+#include "person.hpp"
 #include "accounts.hpp"
 #include "deposits.hpp"
 #include "insurance.hpp"
