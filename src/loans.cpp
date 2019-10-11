@@ -15,3 +15,10 @@
 #include "debit_credit.hpp"
 
 using namespace std;
+
+loans::loans(){
+
+    login();
+
+
+}
