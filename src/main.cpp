@@ -6,16 +6,16 @@
 #include<cstdio>
 #include<string>
 
-#include "person.hpp"
-#include "accounts.hpp"
-#include "deposits.hpp"
-#include "insurance.hpp"
-#include "investments.hpp"
-#include "loans.hpp"
-#include "debit_credit.hpp"
-
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/person.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/accounts.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/deposits.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/insurance.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/investments.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/loans.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/debit_credit.hpp"
 
 using namespace std;
+
 
 void welcome();
 void after_user_choice(int);
