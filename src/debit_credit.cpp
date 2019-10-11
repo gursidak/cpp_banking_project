@@ -1,8 +1,8 @@
 #include <iostream>
-#include "person.hpp"
+#include"/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/person.hpp"
 #include <string>
 #include <fstream>
-#include "debit_credit.hpp"
+#include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/debit_credit.hpp"
 #include <iomanip>
 #include <vector>
 #include <cstdio>
@@ -34,7 +34,7 @@ void debit_credit::login()
 	bool d=0;
 	int opt;
 
-    ifstream fin("acc_info.csv" , ios::in);
+    ifstream fin("/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv" , ios::in);
     string CRN;
     int count=0;
 
@@ -70,28 +70,33 @@ void debit_credit::login()
           	  row.reserve(8);
           		  //add all the column data of row to a vector;
          	   row.push_back(word);
-				//count++;
 				
 				
 		}
+
+       
+     //   cout<<row[7]<< "   ,,, "<<row[6]<<endl;
+
+
+     //   cout<<"usr : "<<row[6]<<"password : "<<row[7]<<endl;
 
 		if(usrname==row[6])
 		{
 					if(pswrd==row[7])
 						d=1;
+                      //  cout<<"d : "<<d;
                      //   cout<<"before"<<endl;
 						break;
-		
-		}
+        }
 
         
 
                                // cout<<"after"<<endl;
-
-
+    }
+    
 		
 	
-	}
+	
 		if(d==1)
 			cout<<"login successful"<<endl;
 		else
