@@ -79,9 +79,13 @@ void debit_credit::login()
 		{
 					if(pswrd==row[7])
 						d=1;
+                     //   cout<<"before"<<endl;
 						break;
 		
 		}
+
+                               // cout<<"after"<<endl;
+
 
 		
 	
@@ -94,11 +98,65 @@ void debit_credit::login()
 }
 
 void debit_credit::credit_debit(){
-
+        
+        fstream fin;
+        fin.open("acc_info.csv" , ios::in);
+        vector <string> row;
+        string line , word , temp;
+        double amt = 0.0;
 
     	cout<<"PRESS 1 FOR CREDIT "<<endl<<"PRESS 2 FOR DEBIT "<<endl;
 		cin>>opt;
 		opt = check(1,2,opt);
-         
 
-         }
+
+         while (fin >> temp)
+    {
+        //read entire row nd store it in string var;
+        getline(fin, line);
+
+        //cout<<"line is containing : "<<line<<endl;
+        //used for breaking words;
+
+        stringstream s(line);
+       // cout<<"printing words\n";
+
+	   row.clear();
+        
+        while (getline(s, word, ','))	
+		{
+          	  row.reserve(8);
+          		  //add all the column data of row to a vector;
+         	   row.push_back(word);
+				//count++;
+		}
+
+        if(usrname==row[6]){
+            switch (opt)
+            {
+            case 1:
+                cout<<"ENTER THE AMOUNT YOU WANT TO CREDIT : " ;
+                cin>>add;
+                amt = (stoi(row[8] ) + add);
+                row[8] = to_string(amt);
+                break;
+
+            case 2:
+                cout<<"ENTER THE AMOUNT YOU WANT TO CREDIT : " ;
+                cin>>add;
+                amt = (stoi(row[8] ) - add);
+                row[8] = to_string(amt);
+                break;
+
+            default:
+                break;
+            }
+            
+
+            cout<<"amount:: "<<row[8]<<endl;
+        } 
+
+
+    }
+}
+

@@ -20,4 +20,5 @@ class debit_credit : public person{
     
         int choosen;
         int opt;
+        double add;
 };
