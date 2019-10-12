@@ -1,7 +1,7 @@
 using namespace std;
 
 
-class loans {
+class loans : public person {
 
     public:
 

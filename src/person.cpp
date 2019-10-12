@@ -18,7 +18,7 @@ using namespace std;
 
 void person::create_acc(){
 
-     ofstream xl("acc_info.csv" , ios::app );
+     ofstream xl("/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv" , ios::app );
      cout<<"ENTER FIRST NAME\n";
 
      getline(cin,firstname);
@@ -139,12 +139,12 @@ void person::create_acc(){
      cout<<endl;  
 
      }
-
+/*//////////////////////////////////////////////////////////LOGIN()////////////////////////////////////////////////////////////////////////////////*/
 void person:: login(){
-bool d=false;
+      bool d=false;
 	int opt;
 
-    ifstream fin("acc_info.csv");
+    ifstream fin("home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv");
     string CRN;
 
 
@@ -183,7 +183,7 @@ bool d=false;
 		{
 					if(pswrd==row[7])
 						d=1;
-						//break;
+					     break;
 		
 		}
 

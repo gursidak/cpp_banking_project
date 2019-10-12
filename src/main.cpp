@@ -68,7 +68,7 @@ void after_user_choice(int c){
    case 3: cards();
       break;
 
-   case 4:// loans();
+   case 4: loans();
       break;
 
    case 5: //insurance();
@@ -100,4 +100,8 @@ void cards(){
    
 }
 
+void loans()
+{
+   class loans lobj;
+}
 
