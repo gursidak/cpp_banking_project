@@ -12,13 +12,13 @@
 #include "insurance.hpp"
 #include "investments.hpp"
 #include "loans.hpp"
-#include "debit_credit.hpp"
+#include "card.hpp"
 
 using namespace std;
 
 
-    int debit_credit::check(int x , int y , int z){
-            if(z<x || z>y)
+int card:: check(int x, int y, int z){
+     if(z<x || z>y)
             {	
                 cout<<"eror choose an appropriate option"<<endl;
                 cin>>z;
