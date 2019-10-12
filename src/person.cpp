@@ -15,7 +15,7 @@
 #include "card.hpp"
 
 using namespace std;
-
+/* ______________________________________________________ create_acc() ______________________________________________________________________________________________________________*/
 void person::create_acc(){
 
      ofstream xl("acc_info.csv" , ios::app );
@@ -152,31 +152,29 @@ void person::login()
   //  int count=0;
 
 
-	std::cout<< "ENTER YOUR CRN "<<endl;
-    getline(cin, usr);
-    cin.ignore();
-    cout<<"u entered usrname : "<<usr<<endl;
+      std::cout<< "ENTER YOUR CRN "<<endl;
+      cin>>usr;
+      cin.ignore();
 
 
-    std::cout<< "ENTER YOUR PASSWORD "<<endl;
-    getline(cin, pswd);
-    cin.ignore();
-    cout<<"your pass : "<<pswd<<endl;
+      std::cout<< "ENTER YOUR PASSWORD "<<endl;
+      getline(cin, pswd);
+      cin.ignore();
     
 
-    vector<string> row;
-    string line, word, temp;
+      vector<string> row;
+      string line, word, temp;
 
 
-    while (fin >> temp)
-    {
+      while (fin >> temp)
+      {
         //read entire row nd store it in string var;
-        getline(fin, line);
+            getline(fin, line);
 
         //cout<<"line is containing : "<<line<<endl;
         //used for breaking words;
 
-        stringstream s(line);
+             stringstream s(line);
        // cout<<"printing words\n";
 
 	   row.clear();
@@ -185,40 +183,43 @@ void person::login()
 		{
           	  row.reserve(8);
           		  //add all the column data of row to a vector;
-         	   row.push_back(word);
+         	  row.push_back(word);
 				
 				
 		}
 
-           // for(auto i=row.begin();i!=row.end();i++)
-            //      cout<<"\nrow : "<<*i<<endl;
+          
 
        
-            cout<<"usrname : "<<usr<<endl;
-            cout<<"pass : "<<pswd<<endl;
+        //    cout<<"usrname : "<<usr<<endl;
+       //     cout<<"pass : "<<pswd<<endl;
 
 
-		if(usr==row[6])
-		{
+		if(usr==row[6]){
 					if(pswd==row[7])
-						d=1;
-                                    cout<<d<<endl;
-                      //  cout<<"d : "<<d;
-                     //   cout<<"before"<<endl;
-						break;
-            }
+					{      
+                                    d=1;
+                                     break;
+                               }
 
-        
 
-                               // cout<<"after"<<endl;
-    }
+                         }
     
 		
 	
 	
-		if(d==1)
-			cout<<"login successful"<<endl;
-		else
-        	      cout<<"sorry, wrong username or password"<<endl;
-		
+
+      } 
+
+                  if(d==1){
+			      cout<<"login successful"<<endl;
+                        }
+
+                   else{
+        	            cout<<"sorry, wrong username or password"<<endl;
+                        login();
+                        }
+
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
