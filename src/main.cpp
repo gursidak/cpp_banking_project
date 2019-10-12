@@ -6,6 +6,7 @@
 #include<cstdio>
 #include<string>
 
+<<<<<<< HEAD
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/person.hpp"
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/accounts.hpp"
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/deposits.hpp"
@@ -13,6 +14,16 @@
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/investments.hpp"
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/loans.hpp"
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/debit_credit.hpp"
+=======
+#include "person.hpp"
+#include "accounts.hpp"
+#include "deposits.hpp"
+#include "insurance.hpp"
+#include "investments.hpp"
+#include "loans.hpp"
+#include "card.hpp"
+
+>>>>>>> 198550e49aa88ba8ae166b77add96552f763589f
 
 using namespace std;
 
@@ -53,11 +64,9 @@ void welcome(){
 
 void after_user_choice(int c){
    
-   switch (c)
-   {
+   switch (c){
    case 0: break;
       
-
    case 1: accounts() ;
       break;
    
@@ -71,10 +80,10 @@ void after_user_choice(int c){
    case 4: loans();
       break;
 
-   case 5: //insurance();
+   case 5: insurance();
       break;
 
-   case 6:// investments();
+   case 6: investments();
       break;      
 
    default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
@@ -89,19 +98,35 @@ void accounts(){
 }
 
 void deposit(){
-   debit_credit dobj;
+   card dobj;
    dobj.login();
 }
 
 void cards(){
 
-   debit_credit dc;
+   card dc;
    dc.login();
    
 }
 
+<<<<<<< HEAD
 void loans()
 {
    class loans lobj;
 }
+=======
+void loans(){
+   loan l;
 
+}
+
+void insurance(){
+   insurance_ ins;
+
+}
+
+void investments(){
+   investment inv;
+>>>>>>> 198550e49aa88ba8ae166b77add96552f763589f
+
+}
