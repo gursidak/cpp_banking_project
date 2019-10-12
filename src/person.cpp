@@ -20,7 +20,7 @@ using namespace std;
 void person::creater(){
 
 
-      ofstream xl("acc_info.csv" , ios_base::app );
+      ofstream xl("/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv" , ios_base::app );
 
      cout<<"ENTER FIRST NAME\n";
      getline(cin,firstname);
