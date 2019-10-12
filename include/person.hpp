@@ -19,7 +19,8 @@ class person {
         string email_id;
         
     private:
-        string usrname , pswrd;
+        string usr ; 
+        string pswd;
 
 
 };
