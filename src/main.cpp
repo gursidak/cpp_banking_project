@@ -100,16 +100,16 @@ void cards(){
 }
 
 void loans(){
-   loan l;
+   class loans l;
 
 }
 
 void insurance(){
-   insurance_ ins;
+//   insurance_ ins;
 
 }
 
 void investments(){
-   investment inv;
+  // investment inv;
 
 }

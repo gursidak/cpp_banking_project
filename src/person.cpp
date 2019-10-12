@@ -142,7 +142,7 @@ void person::create_acc(){
 /*//////////////////////////////////////////////////////////LOGIN()////////////////////////////////////////////////////////////////////////////////*/
 void person:: login(){
       bool d=false;
-	int opt;
+	//int opt;
 
     ifstream fin("home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv");
     string CRN;
