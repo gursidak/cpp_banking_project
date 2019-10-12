@@ -53,11 +53,9 @@ void welcome(){
 
 void after_user_choice(int c){
    
-   switch (c)
-   {
+   switch (c){
    case 0: break;
       
-
    case 1: accounts() ;
       break;
    
