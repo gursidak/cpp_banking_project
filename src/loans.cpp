@@ -19,7 +19,7 @@ using namespace std;
 
 loans::loans(){
 
-   // login();
+    login();
     
     double cal;
     double salary;

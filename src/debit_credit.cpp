@@ -17,6 +17,8 @@
 using namespace std;
 
 
+    
+
     int debit_credit::check(int x , int y , int z){
             if(z<x || z>y)
             {	
