@@ -12,7 +12,7 @@
 #include "insurance.hpp"
 #include "investments.hpp"
 #include "loans.hpp"
-#include "debit_credit.hpp"
+#include "card.hpp"
 
 
 using namespace std;
@@ -68,13 +68,13 @@ void after_user_choice(int c){
    case 3: cards();
       break;
 
-   case 4:// loans();
+   case 4: loans();
       break;
 
-   case 5: //insurance();
+   case 5: insurance();
       break;
 
-   case 6:// investments();
+   case 6: investments();
       break;      
 
    default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
@@ -89,15 +89,28 @@ void accounts(){
 }
 
 void deposit(){
-   debit_credit dobj;
+   card dobj;
    dobj.login();
 }
 
 void cards(){
 
-   debit_credit dc;
+   card dc;
    dc.login();
    
 }
 
+void loans(){
+   loan l;
 
+}
+
+void insurance(){
+   insurance_ ins;
+
+}
+
+void investments(){
+   investment inv;
+
+}
