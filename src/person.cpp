@@ -144,8 +144,8 @@ void person:: login(){
       bool d=false;
 	//int opt;
 
-    ifstream fin("home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/acc_info.csv");
-    string CRN;
+    ifstream fin("acc_info.csv");
+  //  string CRN;
 
 
     std::cout<< "ENTER YOUR CRN "<<endl;
@@ -171,32 +171,42 @@ void person:: login(){
       //used for breaking words;
       stringstream s(line);
 
-      row.reserve(8);
 
       while (getline(s, word, ','))	
 		{
-         	  row.push_back(word);				
+
+             row.reserve(8);
+
+
+         	  row.push_back(word);	 			
 				
 		}
-
-		if(usrname==row[6])
-		{
-					if(pswrd==row[7])
-						d=1;
-					     break;
+                  cout<<"\nm outside\n";
+		
+            
+            if(usrname==row[6])
+		{  
+                  cout<<"inside first"<<endl;
+			
+                  
+                  if(pswrd==row[7])
+                  {
+			    d=1;
+		          cout<<"inside first"<<endl;
+                  }
+		          break;
 		
 		}
 
-		
-	
 	}
 		cout<<row[6]<<endl<<row[7]<<endl;
+
 		if(d==1)
 			cout<<"login successful"<<endl;
 		else
 		{
-				cout<<"sorry, wrong username or password"<<endl;
+			cout<<"sorry, wrong username or password"<<endl;
 		}
-
-}         
+}
+         
 
