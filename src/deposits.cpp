@@ -15,3 +15,10 @@
 #include "/home/sid/Desktop/cpp_banking_proj_git/cpp_banking_project/include/debit_credit.hpp"
 
 using namespace std;
+
+deposits::deposits()
+{
+    login();
+}
+
+

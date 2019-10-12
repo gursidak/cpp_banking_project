@@ -1,6 +1,8 @@
 using namespace std;
 
 
-class accounts {
+class accounts : public person {
+
+    accounts();
 
 };

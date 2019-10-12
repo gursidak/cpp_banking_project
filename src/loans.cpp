@@ -26,7 +26,7 @@ loans::loans(){
     cout<<"PLEASE ENTER YOUR SALARY/PROFIT PER ANUM"<<endl;
     cin>>salary;
     
-    cal=salary/0.6;
+    cal=salary*0.6;
 
     cout<<"YOU ARE ELIGIBLE FOR THE LOAN OF : ₹"<<cal<<endl;
     cout<<"FOR  FURTHUR PROCEDURE CONSULT TO THE MANAGER OF YOUR NEQAREST BRANCH"<<endl;    

@@ -1,6 +1,8 @@
 using namespace std;
 
 
-class insurance {
+class insurance : public person {
+
+insurance();
 
 };
