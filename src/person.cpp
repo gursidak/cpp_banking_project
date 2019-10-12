@@ -15,7 +15,7 @@
 #include "card.hpp"
 
 using namespace std;
-
+/* ______________________________________________________ create_acc() ______________________________________________________________________________________________________________*/
 void person::create_acc(){
 
      ofstream xl("acc_info.csv" , ios::app );
@@ -139,64 +139,87 @@ void person::create_acc(){
      cout<<endl;  
 
      }
-
-void person:: login(){
-bool d=false;
-	int opt;
-
-    ifstream fin("acc_info.csv");
-    string CRN;
+/*//////////////////////////////////////////////////////////  LOGIN()  ////////////////////////////////////////////////////////////////////////////////*/
 
 
-    std::cout<< "ENTER YOUR CRN "<<endl;
-    getline(cin, usrname);
-    cin.ignore();
+void person::login()
+{
+	bool d=0;
+	//int opt;
+
+    ifstream fin("acc_info.csv" , ios::in);
+   // string CRN;
+  //  int count=0;
 
 
-    std::cout<< "ENTER YOUR PASSWORD "<<endl;
-    getline(cin, pswrd);
-    cin.ignore();
+      std::cout<< "ENTER YOUR CRN "<<endl;
+      cin>>usr;
+      cin.ignore();
+
+
+      std::cout<< "ENTER YOUR PASSWORD "<<endl;
+      getline(cin, pswd);
+      cin.ignore();
     
-    vector<string> row;
-    string line, word, temp;
 
-    while (fin >> temp)
-    {
-       row.clear();
+      vector<string> row;
+      string line, word, temp;
 
+
+      while (fin >> temp)
+      {
+        //read entire row nd store it in string var;
+            getline(fin, line);
+
+        //cout<<"line is containing : "<<line<<endl;
+        //used for breaking words;
+
+             stringstream s(line);
+       // cout<<"printing words\n";
+
+	   row.clear();
         
-      //read entire row nd store it in string var;
-      getline(fin, line);
-
-      //used for breaking words;
-      stringstream s(line);
-
-      row.reserve(8);
-
-      while (getline(s, word, ','))	
+        while (getline(s, word, ','))	
 		{
-         	  row.push_back(word);				
+          	  row.reserve(8);
+          		  //add all the column data of row to a vector;
+         	  row.push_back(word);
+				
 				
 		}
 
-		if(usrname==row[6])
-		{
-					if(pswrd==row[7])
-						d=1;
-						//break;
-		
-		}
+          
 
+       
+        //    cout<<"usrname : "<<usr<<endl;
+       //     cout<<"pass : "<<pswd<<endl;
+
+
+		if(usr==row[6]){
+					if(pswd==row[7])
+					{      
+                                    d=1;
+                                     break;
+                               }
+
+
+                         }
+    
 		
 	
-	}
-		cout<<row[6]<<endl<<row[7]<<endl;
-		if(d==1)
-			cout<<"login successful"<<endl;
-		else
-		{
-				cout<<"sorry, wrong username or password"<<endl;
-		}
+	
 
-}         
+      } 
 
+                  if(d==1){
+			      cout<<"login successful"<<endl;
+                        }
+
+                   else{
+        	            cout<<"sorry, wrong username or password"<<endl;
+                        login();
+                        }
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

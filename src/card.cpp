@@ -17,7 +17,7 @@
 using namespace std;
 
 
-int card:: check(int x, int y, int z){
+int card::check(int x, int y, int z){
      if(z<x || z>y)
             {	
                 cout<<"eror choose an appropriate option"<<endl;

@@ -11,11 +11,11 @@ using namespace std;
     EMI Calculators
 */
 
-class loan {
+class loans : public person {
 
     public:
 
-        loans();
+        loans(); 
 
 
 };
