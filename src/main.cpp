@@ -83,33 +83,33 @@ void after_user_choice(int c){
 
 }
 
-void accounts(){
+void accounts()
+{
    person p;
 }
 
-void deposit(){
-   card dobj;
-   dobj.login();
+void deposit()
+{
+  // card dobj;
 }
 
-void cards(){
-
-   card dc;
-   dc.login();
-   
+void cards()
+{
+   //card dc;
 }
 
-void loans(){
+void loans()
+{
    class loans l;
-
 }
 
-void insurance(){
+void insurance()
+{
 //   insurance_ ins;
-
 }
 
-void investments(){
+void investments()
+{
   // investment inv;
 
 }

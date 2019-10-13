@@ -16,7 +16,7 @@
 
 using namespace std;
 /* ______________________________________________________ create_acc() ______________________________________________________________________________________________________________*/
-void person::create_acc(){
+void person::create_acc() {
 
      ofstream xl("acc_info.csv" , ios::app );
      cout<<"ENTER FIRST NAME\n";
@@ -65,7 +65,7 @@ void person::create_acc(){
 
      cout<<"ENTER YOUR RESIDENTIAL ADDRESS: "<<endl;
      getline(cin,address);  
-                       //scanf(" %s",address);    
+                     
      cin.ignore();
      cout<<endl;
 

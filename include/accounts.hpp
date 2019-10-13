@@ -11,6 +11,6 @@ using namespace std;
     Download Account Statement
 */
 
-class accounts {
+class accounts : public person {
 
 };
