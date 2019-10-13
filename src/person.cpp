@@ -148,10 +148,10 @@ void person::login()
 	//int opt;
 
     ifstream fin("acc_info.csv" , ios::in);
-   // string CRN;
-  //  int count=0;
+       // string CRN;
+      //  int count=0;
 
-
+      cout<<endl;
       std::cout<< "ENTER YOUR CRN "<<endl;
       cin>>usr;
       cin.ignore();
@@ -204,21 +204,28 @@ void person::login()
 
 
                          }
-    
-		
-	
-	
-
-      } 
+        } 
 
                   if(d==1){
-			      cout<<"login successful"<<endl;
+			      cout<<"login successful\n"<<endl;
                         }
 
                    else{
-        	            cout<<"sorry, wrong username or password"<<endl;
+        	            cout<<"sorry, wrong username or password\n"<<endl;
                         login();
                         }
-
 }
+//////////////////////////////////////////////////////////// CHECKER() ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+int person::check(int x, int y, int z){
+     if(z<x || z>y)
+            {	
+                cout<<"eror choose an appropriate option"<<endl;
+                cin>>z;
+                check(x,y,z);
+            }
+     else
+            {
+                return z;
+            }

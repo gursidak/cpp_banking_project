@@ -24,7 +24,7 @@ loans::loans(){
     float cal;
     float salary;
 
-    cout<<"PLEASE ENTER YOUR SALARY/PROFIT PER ANUM"<<endl;
+    cout<<"PLEASE ENTER YOUR SALARY/INCOME PER ANUM"<<endl;
     cin>>salary;
     
     cal = salary*0.6 ;
@@ -32,6 +32,5 @@ loans::loans(){
     cout<<"YOU ARE ELIGIBLE FOR THE LOAN UPTO : ₹"<<cal<<endl;
     cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE MANAGER OF YOUR NEAREST BRANCH"<<endl;
 
-
-
 }
+

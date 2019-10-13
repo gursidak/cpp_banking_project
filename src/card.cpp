@@ -16,19 +16,24 @@
 
 using namespace std;
 
+card::card(){
+    
+    login();
 
-int card::check(int x, int y, int z){
-     if(z<x || z>y)
-            {	
-                cout<<"eror choose an appropriate option"<<endl;
-                cin>>z;
-                check(x,y,z);
-            }
-            else
-            {
-                return z;
-            }
+    cout<<"WE PROVIDE OUR COSTUMERS SOMETHING EXTRA\n";
+    cout<<"PLEASE SELECT THE TYPE OF CARD YOU WANT"<<  endl;
+
+    cout<<"Forex / Prepaid Cards"<<endl
+        <<"Credit Card Services"<<endl
+        <<"Debit Card Services"<<endl;
+    
+    
+
+
+
+}
+
             
 
-        }
+        
 

@@ -16,10 +16,11 @@ class card : public person{
 
     public:
 
+    card();
+        
+
     private:
 
     protected:
-        int check(int x , int y , int z);
-        int choosen;
-        int opt;
+   
 };

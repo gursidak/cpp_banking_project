@@ -17,6 +17,10 @@ class person {
         string acc_no, crn, balance= "100";
        
         string email_id;
+
+        int check(int x , int y , int z);
+       // int choosen;
+       // int opt;
         
     private:
         string usr ; 
