@@ -11,7 +11,7 @@ using namespace std;
     Gift Card's Balance Enquiry
 */
 
-class card : public person{
+class card{
 
 
     public:
