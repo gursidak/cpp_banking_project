@@ -16,17 +16,6 @@
 
 using namespace std;
 
-void start(){
-  //bool first = true;
-   cout << "Welcome to bank_name " << endl;
-   cout << "tag_line " << endl;
-   cout << "How can we help you?: "<< endl;
-   person p;
-   p.welcome();
-   p.~person();
-   
-}
-
 void accounts::ac(){
     int ch;
     cout<< endl << endl << "Your financial goals are what drive you forward, and we understand how important it is for you to achieve them. That’s why, our savings and current accounts are specifically designed keeping your unique needs in mind." << endl << endl;

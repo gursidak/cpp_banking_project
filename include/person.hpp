@@ -1,6 +1,6 @@
 using namespace std;
 
-extern void start();
+
 class person {
 
     public:
