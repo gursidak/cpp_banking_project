@@ -18,7 +18,8 @@ using namespace std;
 
 void accounts::ac(){
     int ch;
-    cout<< endl << endl << "Your financial goals are what drive you forward, and we understand how important it is for you to achieve them. That’s why, our savings and current accounts are specifically designed keeping your unique needs in mind." << endl << endl;
+    cout<< endl << endl 
+        <<  "Your financial goals are what drive you forward, and we understand how important it is for you to achieve them. That’s why, our savings and current accounts are specifically designed keeping your unique needs in mind." << endl << endl;
 
 char opt = 'y';
 
@@ -30,17 +31,21 @@ char opt = 'y';
     
         switch(ch){
             case -1: //return true;
-                break;
+                    opt = 'n';
+                    break;
 
             case 0: //::start();
+                    opt = 'n';
                     break;
 
             case 1: savingsAccount();
                     //return false;
+                    opt = 'n';
                     break;
 
             case 2: currentAccount();
                     //return false;
+                     opt = 'n';
                     break;
 
             default: cout << endl<<

@@ -262,7 +262,7 @@ void person:: after_user_choice(int c){
    case 6: investments();
       break;      
 
-   default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
+   default: cout<< "\n\nWrong choice                        entered!!! Enter again:                  \n\n";
             welcome();
       break;
    }
