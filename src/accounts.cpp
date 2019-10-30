@@ -58,9 +58,35 @@ char opt = 'y';
 }
 
 void accounts::savingsAccount(){
+        int ch;
+        char Sch = 'y';
+        
+        cout << endl << "Welcome to the savings bank section" << endl;
+        
+        do{
+                cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n" << "Enter a choice: ";
+                cin >> ch;
+                switch (ch)
+                {
+                case 1:
+                        createSavingsAccount();
+                        Sch = 'n';
+                        break;
+                
+
+                default:
+                        cout << "You've entered a wrong choice.. Enter again??(y/ n) :";
+                        cin >> Sch;
+                        break;
+                }
+        }while(Sch == 'y' || Sch == 'Y');        
 
 }
 
 void accounts:: currentAccount(){
 
+}
+
+void accounts:: createSavingsAccount(){
+        create_acc();
 }
