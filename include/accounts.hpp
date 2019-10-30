@@ -11,7 +11,7 @@ using namespace std;
     Download Account Statement
 */
 
-class accounts: public person {
+class accounts{
     public:
         void ac();
         void savingsAccount();

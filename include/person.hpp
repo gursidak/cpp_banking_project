@@ -1,5 +1,6 @@
 using namespace std;
 
+extern void start();
 class person {
 
     public:
@@ -13,6 +14,9 @@ class person {
         void loans();
         void insurance();
         void investments();
+        
+        ~person();
+        
         
         int x=5;
 

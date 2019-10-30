@@ -14,25 +14,23 @@
 #include "loans.hpp"
 #include "card.hpp"
 
-
 using namespace std;
 
-
-void welcome();
-void after_user_choice(int);
-void accounts();
-void deposit();
-void cards();
-void loans();
-void insurance();
-void investments();
-
-int main()
-{  
+void start(){
+  //bool first = true;
    cout << "Welcome to bank_name " << endl;
    cout << "tag_line " << endl;
    cout << "How can we help you?: "<< endl;
    person p;
    p.welcome();
+   p.~person();
+   
+}
+
+int main()
+{  
+   start();
    return 0;
 }
+
+

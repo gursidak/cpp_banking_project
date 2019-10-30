@@ -15,7 +15,7 @@
 #include "card.hpp"
 
 using namespace std;
-/* ______________________________________________________ create_acc() ______________________________________________________________________________________________________________*/
+
 void person::create_acc(){
 
      ofstream xl("acc_info.csv" , ios::app );
@@ -223,6 +223,7 @@ void person::login()
 }
 
 void person::welcome(){
+   //MAIN MENU
    int ch = 0;
       cout << "1.Accounts\n"
            << "2.Deposit\n"
@@ -234,12 +235,13 @@ void person::welcome(){
       cout<< "Enter your choice( 0 to quit): ";
       cin >> ch;
 
-   after_user_choice(ch);      
+   after_user_choice(ch);     
 }
 
 void person:: after_user_choice(int c){
    switch (c){
-   case 0: break;
+   case 0: cout << "\nHope to see you soon again :)\n"; 
+           break;
       
    case 1: accounts() ;
       break;
@@ -267,7 +269,8 @@ void person:: after_user_choice(int c){
 }
 
 void person:: accounts(){
-     
+   class accounts a;
+   a.ac();
 }
 
 void person:: deposit(){
@@ -287,5 +290,9 @@ void person:: insurance(){
 }
 
 void person:: investments(){
+
+}
+
+person ::~person(){
 
 }
