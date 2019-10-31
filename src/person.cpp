@@ -293,14 +293,14 @@ person ::~person(){
 }
 
 int person::check(int upperLim, int lowerLim, int choice){
-     if(z<x || z>y)
+     if(lowerLim<upperLim || choice>lowerLim)
             {   
                 cout<<"eror choose an appropriate option"<<endl;
-                cin>>z;
-                check(x,y,z);
+                cin>>choice;
+                check(x, lowerLim,choice);
             }
      else
             {
-                return z;
+                return choice;
             }
 }
