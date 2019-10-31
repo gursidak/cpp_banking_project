@@ -20,9 +20,7 @@ card:: card(){
 
 }
 
-card ::~card(){
 
-}
 
 void card:: cardMenu(){
     int Copt;
