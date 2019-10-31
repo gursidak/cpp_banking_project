@@ -11,6 +11,11 @@ using namespace std;
     Download Account Statement
 */
 
-class accounts : public person {
+class accounts: public person{
+    public:
+        void ac();
+        void savingsAccount();
+        void currentAccount();
+        void createSavingsAccount();
 
 };

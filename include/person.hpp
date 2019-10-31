@@ -1,10 +1,23 @@
 using namespace std;
 
+
 class person {
 
     public:
+        void welcome();
+        void after_user_choice(int);
         void create_acc();
         void login();
+        void accounts();
+        void deposit();
+        void cards();
+        void loans();
+        void insurance();
+        void investments();
+        int check(int, int, int);
+        
+        ~person();
+        
         
         int x=5;
 
@@ -16,16 +29,8 @@ class person {
         string password, mobile_no ;
         string acc_no, crn, balance= "100";
         string email_id;
-///////////////////////////////////////////////////// FILE HANDELING /////////////////////////////////////////////////////////////////////////////////////////
          vector<string> row;
-         string line, word, temp;
-
-
-       
-//////////////////////////////////////////////////////////////////// METHODS //////////////////////////////////////////////////////////////////////////////////
-        int check(int upperLim , int lowerLim , int choice);
-       // int choosen;
-       // int opt;
+        string line, word, temp;
         
     private:
         string usr ; 

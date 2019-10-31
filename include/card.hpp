@@ -11,16 +11,17 @@ using namespace std;
     Gift Card's Balance Enquiry
 */
 
-class card : public person{
-
+class card: public person{
+    float annualIncome;
 
     public:
+        card();
+        void cardMenu();
+        void debitCard();
+        void creditCard();
+	    void creditCardMenu();
+	    void debitCardMenu();
+        void makeDebitCard(int type, char custChoice);
+        void makeCreditCard(int type, char CustChoice);
 
-    card();
-        
-
-    private:
-
-    protected:
-   
 };

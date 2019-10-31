@@ -15,10 +15,3 @@
 #include "card.hpp"
 
 using namespace std;
-
-investment::investment(){
-
-    
-
-}
-

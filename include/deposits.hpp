@@ -21,7 +21,10 @@ class deposits : public person{
 
     private:
 
-    int choose;
+    int dep_choose;
+    double  dep_amt;
+    //double fd_amt;
+    int dep_time;
 
 
 };

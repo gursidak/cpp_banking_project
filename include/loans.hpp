@@ -16,6 +16,8 @@ class loans : public person {
     public:
 
         loans(); 
+    
+    private:
 
-
+       int loan_opt;
 };
