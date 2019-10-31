@@ -291,3 +291,16 @@ void person:: investments(){
 person ::~person(){
 
 }
+
+int person::check(int upperLim, int lowerLim, int choice){
+     if(z<x || z>y)
+            {   
+                cout<<"eror choose an appropriate option"<<endl;
+                cin>>z;
+                check(x,y,z);
+            }
+     else
+            {
+                return z;
+            }
+}

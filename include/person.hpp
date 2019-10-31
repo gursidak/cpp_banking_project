@@ -14,6 +14,7 @@ class person {
         void loans();
         void insurance();
         void investments();
+        int check(int, int, int);
         
         ~person();
         
