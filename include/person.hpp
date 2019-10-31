@@ -15,6 +15,7 @@ class person {
         void insurance();
         void investments();
         int check(int, int, int);
+        bool d;
         
         ~person();
         

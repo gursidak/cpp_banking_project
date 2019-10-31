@@ -273,7 +273,8 @@ void person:: deposit(){
 }
 
 void person:: cards(){
-
+   card c;
+   c.cardMenu();
 }
 
 void person:: loans(){
@@ -293,7 +294,7 @@ person ::~person(){
 }
 
 int person::check(int upperLim, int lowerLim, int choice){
-     if(lowerLim<upperLim || choice>lowerLim)
+     if(choice<upperLim || choice>lowerLim)
             {   
                 cout<<"eror choose an appropriate option"<<endl;
                 cin>>choice;

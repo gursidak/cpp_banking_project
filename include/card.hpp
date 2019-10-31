@@ -19,8 +19,6 @@ class card: public person{
         void cardMenu();
         void debitCard();
         void creditCard();
-	    void creditCardMenu();
-	    void debitCardMenu();
         void makeDebitCard(int type, char custChoice);
         void makeCreditCard(int type, char CustChoice);
 
