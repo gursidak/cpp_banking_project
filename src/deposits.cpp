@@ -26,6 +26,6 @@ deposits::~deposits()
 }
 
 void deposits::depositMenu(){
-    cout << ""
+    cout << "";
 }
 

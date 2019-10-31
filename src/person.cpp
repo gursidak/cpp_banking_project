@@ -160,12 +160,7 @@ void person::login()
       std::cout<< "ENTER YOUR PASSWORD "<<endl;
       getline(cin, pswd);
       cin.ignore();
-    
-
-      vector<string> row;
-      string line, word, temp;
-
-
+   
       while (fin >> temp)
       {
         //read entire row nd store it in string var;
@@ -262,7 +257,7 @@ void person:: after_user_choice(int c){
    case 6: investments();
       break;      
 
-   default: cout<< "\n\nWrong choice                        entered!!! Enter again:                  \n\n";
+   default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
             welcome();
       break;
    }
