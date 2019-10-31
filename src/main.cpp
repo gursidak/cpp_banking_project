@@ -90,12 +90,14 @@ void accounts()
 
 void deposit()
 {
-  // card dobj;
+ 
+  deposits dobj;
+
 }
 
 void cards()
 {
-   //card dc;
+   card dc;
 }
 
 void loans()
@@ -110,6 +112,5 @@ void insurance()
 
 void investments()
 {
-  // investment inv;
 
 }

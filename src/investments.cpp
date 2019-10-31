@@ -16,3 +16,9 @@
 
 using namespace std;
 
+investment::investment(){
+
+    
+
+}
+

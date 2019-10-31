@@ -162,8 +162,6 @@ void person::login()
       cin.ignore();
     
 
-      vector<string> row;
-      string line, word, temp;
 
 
       while (fin >> temp)
@@ -214,18 +212,21 @@ void person::login()
         	            cout<<"sorry, wrong username or password\n"<<endl;
                         login();
                         }
+
+
 }
 //////////////////////////////////////////////////////////// CHECKER() ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-int person::check(int x, int y, int z){
-     if(z<x || z>y)
+int person::check(int upperLim, int lowerLim, int choice){
+     if(choice<upperLim || choice>lowerLim)
             {	
                 cout<<"eror choose an appropriate option"<<endl;
-                cin>>z;
-                check(x,y,z);
+                cin>>choice;
+                check(upperLim,lowerLim,choice);
             }
      else
             {
-                return z;
+                return choice;
             }
+}

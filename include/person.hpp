@@ -15,10 +15,15 @@ class person {
         string firstname , middlename , lastname , address  , pan_no , fname ;
         string password, mobile_no ;
         string acc_no, crn, balance= "100";
-       
         string email_id;
+///////////////////////////////////////////////////// FILE HANDELING /////////////////////////////////////////////////////////////////////////////////////////
+         vector<string> row;
+         string line, word, temp;
 
-        int check(int x , int y , int z);
+
+       
+//////////////////////////////////////////////////////////////////// METHODS //////////////////////////////////////////////////////////////////////////////////
+        int check(int upperLim , int lowerLim , int choice);
        // int choosen;
        // int opt;
         

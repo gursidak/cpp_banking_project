@@ -10,6 +10,18 @@ using namespace std;
     Recurring Deposit Calculator
 */
 
-class deposits {
+class deposits : public person{
+
+    public:
+
+    deposits();
+
+    protected:
+
+
+    private:
+
+    int choose;
+
 
 };
