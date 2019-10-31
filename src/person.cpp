@@ -15,7 +15,7 @@
 #include "card.hpp"
 
 using namespace std;
-/* ______________________________________________________ create_acc() ______________________________________________________________________________________________________________*/
+
 void person::create_acc(){
 
      ofstream xl("acc_info.csv" , ios::app );
@@ -160,12 +160,7 @@ void person::login()
       std::cout<< "ENTER YOUR PASSWORD "<<endl;
       getline(cin, pswd);
       cin.ignore();
-    
-
-      vector<string> row;
-      string line, word, temp;
-
-
+   
       while (fin >> temp)
       {
         //read entire row nd store it in string var;
@@ -222,3 +217,90 @@ void person::login()
 
 }
 
+void person::welcome(){
+   //MAIN MENU
+   int ch = 0;
+      cout << "1.Accounts\n"
+           << "2.Deposit\n"
+           << "3.Cards\n"
+           << "4.Loans\n"
+           << "5.Insurance\n"
+           << "6.Investments\n";
+      
+      cout<< "Enter your choice( 0 to quit): ";
+      cin >> ch;
+
+   after_user_choice(ch);     
+}
+
+void person:: after_user_choice(int c){
+   switch (c){
+   case 0: cout << "\nHope to see you soon again :)\n"; 
+           break;
+      
+   case 1: accounts() ;
+      break;
+   
+   case 2: deposit() ;
+      
+      break;
+   
+   case 3: cards();
+      break;
+
+   case 4: loans();
+      break;
+
+   case 5: insurance();
+      break;
+
+   case 6: investments();
+      break;      
+
+   default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
+            welcome();
+      break;
+   }
+}
+
+void person:: accounts(){
+   class accounts a;
+   a.ac();
+}
+
+void person:: deposit(){
+
+}
+
+void person:: cards(){
+
+}
+
+void person:: loans(){
+
+}
+
+void person:: insurance(){
+
+}
+
+void person:: investments(){
+
+}
+
+person ::~person(){
+
+}
+
+int person::check(int upperLim, int lowerLim, int choice){
+     if(lowerLim<upperLim || choice>lowerLim)
+            {   
+                cout<<"eror choose an appropriate option"<<endl;
+                cin>>choice;
+                check(x, lowerLim,choice);
+            }
+     else
+            {
+                return choice;
+            }
+}

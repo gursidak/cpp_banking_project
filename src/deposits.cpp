@@ -15,3 +15,17 @@
 #include "card.hpp"
 
 using namespace std;
+
+deposits::deposits()
+{  
+    cout << endl << "Save for the future, the way you want to, with our range of Deposits" << endl;
+}
+
+deposits::~deposits()
+{
+}
+
+void deposits::depositMenu(){
+    cout << "";
+}
+
