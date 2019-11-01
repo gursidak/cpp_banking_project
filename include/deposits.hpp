@@ -25,6 +25,7 @@ class deposits : public person{
     double  dep_amt;
     //double fd_amt;
     int dep_time;
+    string response;
 
 
 };

@@ -33,10 +33,15 @@ loans::loans(){
     if(loan_opt == 1){
    
     person::login();
+    
+    loan_opt=0;
 
-
+    cout<<"\nPress 1 for taking estimate of loan you can get from our bank\n";
+    if(loan_opt==1){
+    cout<<loan_opt;
     cout<<"Please Enter Your Salary/Income Per Anum"<<endl;
     cin>>salary;
+    
     
     cal = salary*0.6 ;
 
@@ -44,8 +49,9 @@ loans::loans(){
 
     cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE MANAGER OF YOUR NEAREST BRANCH"<<endl;
 
-    }
-
+        }
+     }
+     
     person::welcome();
     
 

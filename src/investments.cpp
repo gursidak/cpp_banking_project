@@ -38,17 +38,29 @@ investments::investments(){
 
     cout<<"press 1 ➤ APPLY NOW \npress any other to exit\n";
     cin>>invest_choose;
-
+repeat:
     switch (invest_choose)
     {
     case 1 :
         person::login();
         
          cout<<" We have recorded your contact details , Thanks for showing interest in our mutual fund policy ! we will contact you for furthur procedure\n";
-
+        
+        person::welcome();
          
         break;
-    
+        
+    case 2 :
+        
+        cout<<"\nWe understand that you may want to invest in customized or focused offerings like Portfolio Management Services or PMSs, Private Equity, Real Estate Funds, Structured Products, etc. along with or apart from the standardized solutions offered by mutual funds for better diversification. Our investment specialists can refer you with range of such focused products to generate superior risk adjusted returns on your investments from various Asset Management Companies.\n";
+
+        person::login();
+        
+         cout<<"We have recorded your contact details , Thanks for showing interest in our mutual fund policy ! we will contact you for furthur procedure\n";
+        
+        person::welcome();
+         
+        break;
     default:
         cout<<"PLEASE CHOOSE AN APPROPRIATE OPTION"<<endl;
         goto repeat;
@@ -56,6 +68,8 @@ investments::investments(){
         break;
 
     }
+
+
 
 
 
