@@ -19,8 +19,6 @@ using namespace std;
 
 loans::loans(){
 
-    
-    
     float cal;
     float salary;
     
@@ -29,7 +27,7 @@ loans::loans(){
     cout<<"\n\nSit back with ease and let our personal loans take care of your unplanned financial needs and emergencies. Get quick access within few clicks.\n\n";
 
     cout<<"\nPRESS 1 to apply now or any other key to quit !!\n";
-    cin>>loan_opt;
+    cin >> loans::loan_opt;
     if(loan_opt == 1){
    
     person::login();
