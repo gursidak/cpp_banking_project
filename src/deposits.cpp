@@ -71,7 +71,9 @@ using namespace std;
               cout<<"▶ You need to deposit a small amount of money every month or every quarter. The minimum amount can be as low as Rs. 500\n";
               cout<<"▶ Based on your budget and investment goal, your money will be invested in debt or equity funds. In the last 10 years, Equity Linked Mutual Funds have \n  performed well in the market with a return of 12-22%. This is significantly higher than RD interest rates\n";
               cout<<"▶ There is no withdrawal penalty when you withdraw money from your SIP account. This means that SIPs have higher liquidity when compared to RD accounts which penalize users for premature withdrawal\n";
-              cout<<"▶ Returns from SIPs which invest in Equity Linked Mutual Funds (ELSS) are exempt from tax. The gains from an RD is taxable.\n";
+              cout<<"▶ Returns from SIPs which invest in E       
+                cout<<"Thanks for showing interest in our mutual fund policy ! we will contact you for furthur procedure\n";
+quity Linked Mutual Funds (ELSS) are exempt from tax. The gains from an RD is taxable.\n";
 
              person::login();
         

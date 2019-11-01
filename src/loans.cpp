@@ -31,6 +31,7 @@ loans::loans(){
     cout<<"\nPRESS 1 to apply now or any other key to quit !!\n";
     cin>>loan_opt;
     if(loan_opt == 1){
+   
     person::login();
 
 

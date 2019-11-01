@@ -214,17 +214,22 @@ void person::login()
 void person::welcome(){
    //MAIN MENU
    int ch = 0;
-      cout<<endl;
-      cout<<"\t\t\t\tWELCOME TO THE GURU NANAK BANK OF INDIA\n\n\n\n";
-      cout << "1.Accounts\n"
+       cout<<endl; 
+    
+       cout<<"\t\t\t🌸  𝙒 𝙀 𝙇 𝘾 𝙊 𝙈 𝙀   𝙏 𝙊  🅖 🅤 🅡 🅤  🅝 🅐 🅝 🅐 🅚  🅑 🅐 🅝 🅚   𝙊 𝙁  𝙄 𝙉 𝘿 𝙄 𝘼  🌸\n";
+       cout<<"\t\t\t≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n\n\n\n";
+
+       cout << "How can we help you?: "<< endl;
+       cout << "1.Accounts\n"
            << "2.Deposit\n"
            << "3.Cards\n"
            << "4.Loans\n"
            << "5.Insurance\n"
            << "6.Investments\n";
-      
-      cout<< "Enter your choice( 0 to quit): ";
-      cin >> ch;
+         
+         cout<<"≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n";
+         cout<< "Enter your choice( 0 to quit): ";
+         cin >> ch;
 
    after_user_choice(ch);     
 }
@@ -237,7 +242,7 @@ void person:: after_user_choice(int c){
    case 1: accounts() ;
       break;
    
-   case 2: deposit() ;
+   case 2: deposit();
       break;
    
    case 3: cards();
@@ -252,7 +257,7 @@ void person:: after_user_choice(int c){
    case 6: investments();
       break;      
 
-   default: cout<< "\n\nWrong choice entered!!! Enter again: \n\n";
+   default: cout<< "\n\nWrong Choice Entered!!! Enter gain: \n\n";
             welcome();
       break;
    }
@@ -278,6 +283,7 @@ void person:: loans(){
 
 void person:: insurance(){
 
+
 }
 
 void person:: investments(){
@@ -293,7 +299,7 @@ int person::check(int upperLim, int lowerLim, int choice){
             {   
                 cout<<"eror choose an appropriate option"<<endl;
                 cin>>choice;
-                check(x, lowerLim,choice);
+                check(upperLim, lowerLim,choice);
             }
      else
             {

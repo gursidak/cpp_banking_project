@@ -9,8 +9,16 @@ using namespace std;
     Tax Saving Options
 */
 
-class investment  {
+class investments : public person  {
     
-     investment();
+    public:
+
+     investments();
+
+    protected:
+
+    int invest_choose;
+
+    private:
 
 };
