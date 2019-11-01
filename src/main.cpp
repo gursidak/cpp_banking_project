@@ -21,9 +21,9 @@ void start(){
    cout << "Welcome to bank_name " << endl;
    cout << "tag_line " << endl;
    cout << "How can we help you?: "<< endl;
-   person p;
+   class person p;
    p.welcome();
-   p.~person();
+  // p.~person();
    
 }
 
