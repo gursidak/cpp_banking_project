@@ -290,11 +290,7 @@ person ::~person(){
 }
 
 int person::check(int upperLim, int lowerLim, int choice){
-<<<<<<< HEAD
-     if(choice<upperLim || choice>lowerLim)
-=======
      if(choice<lowerLim || choice>upperLim)
->>>>>>> master
             {   
                 cout<<"eror choose an appropriate option"<<endl;
                 cin>>choice;

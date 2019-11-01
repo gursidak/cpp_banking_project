@@ -38,12 +38,8 @@ loans::loans(){
     cal = salary*0.6 ;
 
     cout<<"YOU ARE ELIGIBLE FOR THE LOAN UPTO : ₹"<<cal<<endl;
-<<<<<<< HEAD
-    cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE NEAREST BRANCH"<<endl;
-=======
 
     cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE MANAGER OF YOUR NEAREST BRANCH"<<endl;
->>>>>>> master
 
     }
 
