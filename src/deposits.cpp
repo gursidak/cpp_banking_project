@@ -28,6 +28,8 @@ using namespace std;
    repeat:
         switch (dep_choose)
         {
+       /*___________________________________________________________________________ FD FUNCTION____________________________________________________________________________________________________*/
+
         case 1:
 
         cout<< "Take control of your savings by investing in Fixed Deposit. Enjoy Fixed Deposit interest rates as high as 6.60%* with us. Happy Investing! \n" <<endl;
@@ -58,12 +60,23 @@ using namespace std;
          cout<<"FD of ₹"<<dep_amt<<" has been created successfully !\n";
          
          cout<<"\nplease collect hard copy of your FD from your bank branch manager\n";
+
+         //cout<<"press enter to Quit!\n";
+         //cin>>dep_choose;
+        
+
          } 
         
+
+         
+
         person::welcome();
+
 
             break;
         
+ 
+ /*___________________________________________________________________________ RD FUNCTION____________________________________________________________________________________________________*/
         case 2:
               cout<<"\n\nA small investment every month can get you one step closer to your dreams\n\n"<<endl;
               
@@ -86,9 +99,12 @@ using namespace std;
 
              cout<<"FD of ₹"<<dep_amt<<" has been created successfully !\n";
              cout<<"\nplease collect hard copy of your RD from your bank branch manager\n";
-      
-              person::welcome();
+     
+             cout<<"press enter to Quit!\n";
+             cin.ignore();
 
+             
+            
             break;      
        
        default:
