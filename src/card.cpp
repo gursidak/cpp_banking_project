@@ -20,6 +20,11 @@ card:: card(){
 
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 void card:: cardMenu(){
     int Copt;
     char Cch = 'y';

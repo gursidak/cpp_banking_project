@@ -10,6 +10,8 @@ using namespace std;
     Tax Saving Options
 */
 
-class investment {
+class investment  {
+    
+     investment();
 
 };

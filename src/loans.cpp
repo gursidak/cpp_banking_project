@@ -19,19 +19,37 @@ using namespace std;
 
 loans::loans(){
 
-    login();
-    
     float cal;
     float salary;
+    
+    cout<<"\t\t\t\t-----WELCOME TO LOAN SECTION------"<<endl;
 
-    cout<<"PLEASE ENTER YOUR SALARY/PROFIT PER ANUM"<<endl;
+    cout<<"\n\nSit back with ease and let our personal loans take care of your unplanned financial needs and emergencies. Get quick access within few clicks.\n\n";
+
+    cout<<"\nPRESS 1 to apply now or any other key to quit !!\n";
+    cin >> loans::loan_opt;
+    if(loan_opt == 1){
+    person::login();
+
+
+    cout<<"Please Enter Your Salary/Income Per Anum"<<endl;
     cin>>salary;
     
     cal = salary*0.6 ;
 
     cout<<"YOU ARE ELIGIBLE FOR THE LOAN UPTO : ₹"<<cal<<endl;
+<<<<<<< HEAD
     cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE NEAREST BRANCH"<<endl;
+=======
 
+    cout<<"\nFOR  FURTHUR PROCEDURE CONSULT TO THE MANAGER OF YOUR NEAREST BRANCH"<<endl;
+>>>>>>> master
+
+    }
+
+    person::welcome();
+    
 
 
 }
+

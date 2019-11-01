@@ -65,7 +65,7 @@ void person::create_acc(){
 
      cout<<"ENTER YOUR RESIDENTIAL ADDRESS: "<<endl;
      getline(cin,address);  
-                       //scanf(" %s",address);    
+                     
      cin.ignore();
      cout<<endl;
 
@@ -148,10 +148,10 @@ void person::login()
 	//int opt;
 
     ifstream fin("acc_info.csv" , ios::in);
-   // string CRN;
-  //  int count=0;
+       // string CRN;
+      //  int count=0;
 
-
+      cout<<endl;
       std::cout<< "ENTER YOUR CRN "<<endl;
       cin>>usr;
       cin.ignore();
@@ -199,27 +199,23 @@ void person::login()
 
 
                          }
-    
-		
-	
-	
-
-      } 
+        } 
 
                   if(d==1){
-			      cout<<"login successful"<<endl;
+			      cout<<"login successful\n"<<endl;
                         }
 
                    else{
-        	            cout<<"sorry, wrong username or password"<<endl;
+        	            cout<<"sorry, wrong username or password\n"<<endl;
                         login();
                         }
-
 }
 
 void person::welcome(){
    //MAIN MENU
    int ch = 0;
+      cout<<endl;
+      cout<<"\t\t\t\tWELCOME TO THE GURU NANAK BANK OF INDIA\n\n\n\n";
       cout << "1.Accounts\n"
            << "2.Deposit\n"
            << "3.Cards\n"
@@ -242,7 +238,6 @@ void person:: after_user_choice(int c){
       break;
    
    case 2: deposit() ;
-      
       break;
    
    case 3: cards();
@@ -261,7 +256,7 @@ void person:: after_user_choice(int c){
             welcome();
       break;
    }
-}
+} 
 
 void person:: accounts(){
    class accounts a;
@@ -269,7 +264,7 @@ void person:: accounts(){
 }
 
 void person:: deposit(){
-
+          deposits dobj;
 }
 
 void person:: cards(){
@@ -278,6 +273,7 @@ void person:: cards(){
 }
 
 void person:: loans(){
+   class loans lobj;
 
 }
 
@@ -294,7 +290,11 @@ person ::~person(){
 }
 
 int person::check(int upperLim, int lowerLim, int choice){
+<<<<<<< HEAD
      if(choice<upperLim || choice>lowerLim)
+=======
+     if(choice<lowerLim || choice>upperLim)
+>>>>>>> master
             {   
                 cout<<"eror choose an appropriate option"<<endl;
                 cin>>choice;
