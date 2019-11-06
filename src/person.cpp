@@ -112,18 +112,29 @@ void person::login(){
    string line, word, temp;
 
    if(fin){
-      while(fin >> temp){
+      while(getline(fin, line)){
          record.clear();
-         getline(fin, line);
          stringstream s(line);
 
          while(getline(s, word, ',')){
             record.push_back(word);
          }
 
+         if(record.size() != 11)
+                throw std::runtime_error("invalid record size (" + std::to_string(record.size()) + ")");
+
          if(CRN == record[0] && Password == record[10]){
             found = true;
             cout << "\nLogin successfull!\n\n";
+            cout << "ACCOUNT DETAILS: \n\n";
+            
+            cout << "Name : " << record[2] + record[3] + record[4]
+                 << "\nCRN: " << record[0]
+                 << "\nAccount Number: " << record[1]
+                 << "\nEmail: " << record[6]
+                 << "\nAddress: " << record[7]
+                 << "\nBalance: Rs." << record[9];
+
             break;
          }
       }
@@ -135,6 +146,7 @@ void person::login(){
    else{
       cout << "\nTechnical fault occured.. try again after some time!!\n\n";
    }
+   
 }
 
 
@@ -240,4 +252,8 @@ int person::check(int upperLim, int lowerLim, int choice){
             {
                 return choice;
             }
+}
+
+void person::show_account(){
+
 }
