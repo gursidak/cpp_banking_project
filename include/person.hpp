@@ -29,7 +29,6 @@ class person {
         string password, mobile_no ;
         string acc_no, crn, balance= "100";
         string email_id;
-         vector<string> row;
         string line, word, temp;
         
     private:

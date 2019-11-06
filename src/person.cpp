@@ -96,7 +96,7 @@ void person::create_acc(){
      << address<< ","
      <<pan_no<<","
      <<balance << ","
-     << password<<"," << endl;
+     << password<< "\n";
 
      xl.close();
 
@@ -104,51 +104,48 @@ void person::create_acc(){
 
      }
 
-void person::login()
-{
-	bool d=0;
-    ifstream fin("acc_info.csv" , ios::in);
+void person::login(){
+   bool found = false;
 
-      cout<<endl;
-      std::cout<< "ENTER YOUR CRN ";
-      getline(cin, usr);
-      
-      std::cout<< "ENTER YOUR PASSWORD ";
-      getline(cin, pswd);
-   
-      while (fin >> temp){
-            getline(fin, line);
+   fstream fin;
+   fin.open("acc_info.csv", ios:: in);
 
-             stringstream s(line);
+   string CRN, Password;
+   cout << "\nEnter CRN: ";
+   getline(cin, CRN);
 
-	   row.clear();
-        
-          while (getline(s, word, ','))	{
-          	  row.reserve(8);
-          		  //add all the column data of row to a vector;
-         	  row.push_back(word);				
-		}
+   cout << "\nEnter password :";
+   getline(cin, Password);
 
-		      if(usr==row[6]){
-					if(pswd==row[7])
-					{      
-                                    d=1;
-                                     break;
-                               }
+   vector<string> record;
+   string line, word, temp;
 
+   if(fin){
+      while(fin >> temp){
+         record.clear();
+         getline(fin, line);
+         stringstream s(line);
 
-                         }
-        } 
+         while(getline(s, word, ',')){
+            record.push_back(word);
+         }
 
-                  if(d==1){
-			      cout<<"login successful\n"<<endl;
-                        }
+         if(CRN == record[0] && Password == record[10]){
+            found = true;
+            cout << "\nLogin successfull!\n\n";
+            break;
+         }
+      }
+      if(!found){
+         cout << "\nWrong CRN and password entered\n\n";
+      }
 
-                   else{
-        	            cout<<"sorry, wrong username or password\n"<<endl;
-                        login();
-                        }
+   }
+   else{
+      cout << "\nTechnical fault occured.. try again after some time!!\n\n";
+   }
 }
+
 
 void person::welcome(){
    //MAIN MENU
