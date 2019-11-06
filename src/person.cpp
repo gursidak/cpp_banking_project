@@ -91,10 +91,10 @@ void person::login()
 	person ac;
 	bool flag=false;
 	ifstream inFile;
-	inFile.open("account_info.dat",ios::binary);
+	inFile.open("acc_info.dat",ios::binary);
 	if(!inFile)
 	{
-		cout<<"File could not be open !! Press any Key...";
+		cout<<"File could not be open !! Press any Key..." << endl;
 		return;
 	}
    string an, pw;

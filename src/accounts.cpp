@@ -65,7 +65,7 @@ void accounts::savingsAccount(){
         cout << endl << "Welcome to the savings bank section" << endl;
         
         do{
-                cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n" << "Enter a choice: ";
+                cout << "1.Open a new savings a/c\n" << "2.Show account details.\n" <<  "Enter a choice: ";
                 cin >> ch;
                 cin.ignore();
                 switch (ch)
@@ -74,8 +74,10 @@ void accounts::savingsAccount(){
                         createSavingsAccount();
                         Sch = 'n';
                         break;
-                
 
+                case 2: login();
+                        break;
+              
                 default:
                         cout << "You've entered a wrong choice.. Enter again??(y/ n) :";
                         cin >> Sch;
