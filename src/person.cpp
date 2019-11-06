@@ -18,8 +18,8 @@ using namespace std;
 
 void person::create_acc(){
 
-     ofstream xl("acc_info.dat" ,ios:: binary| ios::app );
-     cout<<"ENTER FIRST NAME\n";
+     ofstream xl("acc_info.csv" , ios::app );
+         cout<<"ENTER FIRST NAME\n";
      getline(cin,firstname);
 
      cout<<"ENTER MIDDLE NAME \n";
@@ -46,7 +46,6 @@ void person::create_acc(){
     acc_no = to_string(910000000000 + stol(mobile_no, nullptr, 10)); //generating acc no;
 
     crn = to_string(int(stol(acc_no)/100000)); //generating crn;
-
      string repswrd;
      bool z;
 
@@ -58,7 +57,7 @@ void person::create_acc(){
      cout<<"RE-ENTER YOUR PASSWORD: ";
      getline(cin,repswrd);
 
-      if(!(password.compare(repswrd))){
+     if(!(password.compare(repswrd))){
                
            cout<<"Passwords matched succesfully!"<<endl<<endl;
            z = true;
@@ -71,68 +70,78 @@ void person::create_acc(){
 
          }while(!z);
 
-      cout<<"\nAccount created successfully\n";
+      cout<<"\n\nAccount created successfully\n\n";
 
       cout << "Customer Satisfaction is our main"
            << "priority, so we have deposited a "
            << "sum of Rs. 100 into your bank a/c"
            << endl << endl;
     
-      xl.write(reinterpret_cast<char*>(this), sizeof(*this));
+     xl<<crn<<","
+      << acc_no<< ","
+     << firstname << "," 
+     << middlename << "," 
+     << lastname<< ","
+     << mobile_no<< ","
+     <<email_id<<","
+     << address<< ","
+     <<pan_no<<","
+     <<balance << ","
+     << password<< "\n";
 
-      xl.close();
+     xl.close();
+
+     cout<<endl;  
 
      }
-/*//////////////////////////////////////////////////////////  LOGIN()  ////////////////////////////////////////////////////////////////////////////////*/
 
+void person::login(){
+   bool found = false;
 
-void person::login()
-{
-	person ac;
-	bool flag=false;
-	ifstream inFile;
-	inFile.open("acc_info.dat",ios::binary);
-	if(!inFile)
-	{
-		cout<<"File could not be open !! Press any Key..." << endl;
-		return;
-	}
-   string an, pw;
-   cout << "Enter account no. : ";
-   getline(cin, an);
+   fstream fin;
+   fin.open("acc_info.csv", ios:: in);
 
-   cout << "Enter password : ";
-   getline(cin, pw);
-   cout << endl;
+   string CRN, Password;
+   cout << "\nEnter CRN: ";
+   getline(cin, CRN);
 
-	//cout<<"\n\t\t\tBALANCE DETAILS\n";
-    	while(inFile.read(reinterpret_cast<char *> (&ac), sizeof(person))){
-         if(ac.retacno() == an){
-            cout << "Login successfull!" << endl;
-            ac.show_account();
-            flag=true;
+   cout << "\nEnter password :";
+   getline(cin, Password);
+
+   vector<string> record;
+   string line, word, temp;
+
+   if(fin){
+      while(fin >> temp){
+         record.clear();
+         getline(fin, line);
+         stringstream s(line);
+
+         while(getline(s, word, ',')){
+            record.push_back(word);
          }
-	}
-    inFile.close();
-	if(flag==false)
-		cout<<"\n\n\t\t\tAccount number does not exist";
+
+         if(CRN == record[0] && Password == record[10]){
+            found = true;
+            cout << "\nLogin successfull!\n\n";
+            break;
+         }
+      }
+      if(!found){
+         cout << "\nWrong CRN and password entered\n\n";
+      }
+
+   }
+   else{
+      cout << "\nTechnical fault occured.. try again after some time!!\n\n";
+   }
 }
 
-void person::show_account(){
-   cout<<"address " <<address<<endl;
-       cout<<"pan: "<<pan_no<<endl;
-       cout<<"email: "<<email_id<<endl;
-       cout<<"First name: "<<firstname<<endl;
-       cout<<"Last Name: "<<lastname<<endl;
-       cout<<"Middle Name: "<<middlename<<endl;
-       cout<<"Father's Name: "<<fname<<endl<< endl; 
-}
 
 void person::welcome(){
-         int ch = 0;
-
-   do{   
-      //MAIN MENU
+   //MAIN MENU
+   int ch = 0;
+   do{
          cout<<endl; 
       
          cout<<"\t\t\t🌸  𝙒 𝙀 𝙇 𝘾 𝙊 𝙈 𝙀   𝙏 𝙊  🅖 🅤 🅡 🅤  🅝 🅐 🅝 🅐 🅚  🅑 🅐 🅝 🅚   𝙊 𝙁  𝙄 𝙉 𝘿 𝙄 𝘼  🌸\n";
@@ -148,44 +157,44 @@ void person::welcome(){
             << "7.Exit\n";
             
             cout<<"≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n";
-            cout<< "Enter your choice: ";
+            cout<< "Enter your choice( 0 to quit): ";
             cin >> ch;
-   after_user_choice(ch);     
-
-   }while(ch!=7);
-
+            cin.ignore();
+         
+            if(ch > 7 || ch < 0)
+               cout << "\nEntered a wrong choice.. Enter again..\n";
+            else
+               after_user_choice(ch);  
+   }while(ch!=7);   
 }
 
 void person:: after_user_choice(int c){
-   char secondChance = 'y';
-   do{
-      switch (c){     
-         case 1: accounts() ;
-            break;
-         
-         case 2: deposit();
-            break;
-         
-         case 3: cards();
-            break;
+   switch (c){
+   case 7: cout << "\nHope to see you soon again :)\n"; 
+           break;
+      
+   case 1: accounts() ;
+      break;
+   
+   case 2: deposit();
+      break;
+   
+   case 3: cards();
+      break;
 
-         case 4: loans();
-            break;
+   case 4: loans();
+      break;
 
-         case 5: insurance();
-            break;
+   case 5: insurance();
+      break;
 
-         case 6: investments();
-            break;    
+   case 6: investments();
+      break;      
 
-         case 7: cout << "\nHope to see you soon again :)\n";
-            break;  
-
-         default: cout<< "\n\nWrong Choice Entered!!! Enter again? (y/n): \n\n";
-         cin >> secondChance;
-            break;
-      }
-   }while(secondChance == 'y' || secondChance == 'Y');
+   default: cout<< "\n\nWrong Choice Entered!!! Enter gain: \n\n";
+            welcome();
+      break;
+   }
 } 
 
 void person:: accounts(){
