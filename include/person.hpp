@@ -5,6 +5,7 @@ class person {
 
     public:
         void welcome();
+        void show_account();
         void after_user_choice(int);
         void create_acc();
         void login();
@@ -16,6 +17,9 @@ class person {
         void investments();
         int check(int, int, int);
         bool d;
+        string retacno() const{
+	        return acc_no;
+        }
         
         ~person();
         

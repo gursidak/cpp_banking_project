@@ -17,5 +17,4 @@ class accounts: public person{
         void savingsAccount();
         void currentAccount();
         void createSavingsAccount();
-
 };

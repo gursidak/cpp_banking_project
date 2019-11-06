@@ -17,14 +17,8 @@
 using namespace std;
 
 void start(){
-  //bool first = true;
-   cout << "Welcome to bank_name " << endl;
-   cout << "tag_line " << endl;
-   cout << "How can we help you?: "<< endl;
-   class person p;
-   p.welcome();
-  // p.~person();
-   
+  person p;
+   p.welcome();  
 }
 
 int main()

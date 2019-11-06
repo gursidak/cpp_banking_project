@@ -51,6 +51,7 @@ char opt = 'y';
             default: cout << endl<<
                     "Wrong choice entered.. Enter again?? (y/n): ";
                     cin >> opt;
+                    cin.ignore();
                     break;
         }
     }while(opt == 'y' || opt == 'Y');
@@ -66,6 +67,7 @@ void accounts::savingsAccount(){
         do{
                 cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n" << "Enter a choice: ";
                 cin >> ch;
+                cin.ignore();
                 switch (ch)
                 {
                 case 1:
