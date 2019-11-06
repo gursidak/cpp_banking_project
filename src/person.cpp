@@ -19,67 +19,33 @@ using namespace std;
 void person::create_acc(){
 
      ofstream xl("acc_info.csv" , ios::app );
-     cout<<"ENTER FIRST NAME\n";
-
+         cout<<"ENTER FIRST NAME\n";
      getline(cin,firstname);
-     cin.ignore();
-
-     cout<<endl; 
-     cout<<endl;
-
 
      cout<<"ENTER MIDDLE NAME \n";
      getline(cin,middlename);
 
-     cout<<endl;     
-     cin.ignore();          // scanf("%s",middlename);    
-  
-     
-
-
      cout<<"ENTER LAST NAME: "<<endl;
      getline(cin,lastname);  
-
-     cin.ignore();             //scanf(" %s",lastname);    
-     cout<<endl;
-
 
      cout<<"ENTER FATHER'S NAME: "<<endl;
      getline(cin,fname);  
 
-     cin.ignore();
-     cout<<endl;
-
-     
      cout<<"ENTER YOUR EMAIL_ID: ";
      getline(cin,email_id);
-
-     cin.ignore();
-     cout<<endl;
 
      cout<<"ENTER PAN CARD NUMBER: "<<endl;
      getline(cin,pan_no);
 
-     cin.ignore();               //scanf(" %s",pan_no);    
-     cout<<endl;
-
      cout<<"ENTER YOUR RESIDENTIAL ADDRESS: "<<endl;
      getline(cin,address);  
                      
-     cin.ignore();
-     cout<<endl;
-
      cout<<"ENTER YOUR MOBILE NUMBER: "<<endl;
      getline(cin, mobile_no);
 
-     cin.ignore();
-     cout<<endl;
-     cout<<endl;
+    acc_no = to_string(910000000000 + stol(mobile_no, nullptr, 10)); //generating acc no;
 
-    acc_no = to_string(910000000000 + stoi(mobile_no)); //generating acc no;
-
-    crn = to_string(stoi(acc_no)/5); //generating crn;
-
+    crn = to_string(int(stol(acc_no)/100000)); //generating crn;
      string repswrd;
      bool z;
     cin.ignore();
@@ -89,12 +55,10 @@ void person::create_acc(){
      cout<<"ENTER PASSWORD FOR YOUR CRN(USER_ACC): ";
      getline(cin,password);    
 
-     cin.ignore();
      cout<<"RE-ENTER YOUR PASSWORD: ";
      getline(cin,repswrd);
 
-
-     if(password.compare(repswrd)){
+     if(!(password.compare(repswrd))){
                
            cout<<"Passwords matched succesfully!"<<endl<<endl;
            z = true;
@@ -107,7 +71,7 @@ void person::create_acc(){
 
          }while(!z);
 
-      cout<<"\nAccount created successfully\n";
+      cout<<"\n\nAccount created successfully\n\n";
 
        cout<<"address " <<address<<endl;
        cout<<"pan: "<<pan_no<<endl;
@@ -120,18 +84,18 @@ void person::create_acc(){
       cout << "Customer Satisfaction is our main"
            << "priority, so we have deposited a "
            << "sum of Rs. 100 into your bank a/c"
-           << endl;
+           << endl << endl;
     
      xl<<crn<<","
       << acc_no<< ","
      << firstname << "," 
-     << middlename << "+" 
+     << middlename << "," 
      << lastname<< ","
      << mobile_no<< ","
      <<email_id<<","
      << address<< ","
      <<pan_no<<","
-     <<balance
+     <<balance << ","
      << password<<"," << endl;
 
      xl.close();
@@ -139,58 +103,33 @@ void person::create_acc(){
      cout<<endl;  
 
      }
-/*//////////////////////////////////////////////////////////  LOGIN()  ////////////////////////////////////////////////////////////////////////////////*/
-
 
 void person::login()
 {
 	bool d=0;
-	//int opt;
-
     ifstream fin("acc_info.csv" , ios::in);
-       // string CRN;
-      //  int count=0;
 
       cout<<endl;
-      std::cout<< "ENTER YOUR CRN "<<endl;
-      cin>>usr;
-      cin.ignore();
-
-
-      std::cout<< "ENTER YOUR PASSWORD "<<endl;
+      std::cout<< "ENTER YOUR CRN ";
+      getline(cin, usr);
+      
+      std::cout<< "ENTER YOUR PASSWORD ";
       getline(cin, pswd);
-      cin.ignore();
    
-      while (fin >> temp)
-      {
-        //read entire row nd store it in string var;
+      while (fin >> temp){
             getline(fin, line);
 
-        //cout<<"line is containing : "<<line<<endl;
-        //used for breaking words;
-
              stringstream s(line);
-       // cout<<"printing words\n";
 
 	   row.clear();
         
-        while (getline(s, word, ','))	
-		{
+          while (getline(s, word, ','))	{
           	  row.reserve(8);
           		  //add all the column data of row to a vector;
-         	  row.push_back(word);
-				
-				
+         	  row.push_back(word);				
 		}
 
-          
-
-       
-        //    cout<<"usrname : "<<usr<<endl;
-       //     cout<<"pass : "<<pswd<<endl;
-
-
-		if(usr==row[6]){
+		      if(usr==row[6]){
 					if(pswd==row[7])
 					{      
                                     d=1;
@@ -214,29 +153,36 @@ void person::login()
 void person::welcome(){
    //MAIN MENU
    int ch = 0;
-       cout<<endl; 
-    
-       cout<<"\t\t\t🌸  𝙒 𝙀 𝙇 𝘾 𝙊 𝙈 𝙀   𝙏 𝙊  🅖 🅤 🅡 🅤  🅝 🅐 🅝 🅐 🅚  🅑 🅐 🅝 🅚   𝙊 𝙁  𝙄 𝙉 𝘿 𝙄 𝘼  🌸\n";
-       cout<<"\t\t\t≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n\n\n\n";
+   do{
+         cout<<endl; 
+      
+         cout<<"\t\t\t🌸  𝙒 𝙀 𝙇 𝘾 𝙊 𝙈 𝙀   𝙏 𝙊  🅖 🅤 🅡 🅤  🅝 🅐 🅝 🅐 🅚  🅑 🅐 🅝 🅚   𝙊 𝙁  𝙄 𝙉 𝘿 𝙄 𝘼  🌸\n";
+         cout<<"\t\t\t≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n\n\n\n";
 
-       cout << "How can we help you?: "<< endl;
-       cout << "1.Accounts\n"
-           << "2.Deposit\n"
-           << "3.Cards\n"
-           << "4.Loans\n"
-           << "5.Insurance\n"
-           << "6.Investments\n";
+         cout << "How can we help you?: "<< endl;
+         cout << "1.Accounts\n"
+            << "2.Deposit\n"
+            << "3.Cards\n"
+            << "4.Loans\n"
+            << "5.Insurance\n"
+            << "6.Investments\n"
+            << "7.Exit\n";
+            
+            cout<<"≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n";
+            cout<< "Enter your choice( 0 to quit): ";
+            cin >> ch;
+            cin.ignore();
          
-         cout<<"≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕≕\n";
-         cout<< "Enter your choice( 0 to quit): ";
-         cin >> ch;
-
-   after_user_choice(ch);     
+            if(ch > 7 || ch < 0)
+               cout << "\nEntered a wrong choice.. Enter again..\n";
+            else
+               after_user_choice(ch);  
+   }while(ch!=7);   
 }
 
 void person:: after_user_choice(int c){
    switch (c){
-   case 0: cout << "\nHope to see you soon again :)\n"; 
+   case 7: cout << "\nHope to see you soon again :)\n"; 
            break;
       
    case 1: accounts() ;

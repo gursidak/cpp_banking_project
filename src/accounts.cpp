@@ -16,6 +16,35 @@
 
 using namespace std;
 
+void options(){
+        char userChoice = 'y';
+        int opt;
+        do{
+                cout << "1.Show account details\n"
+                << "2.Go to main menu\n"
+                << "Enter choice: ";
+
+                cin >> opt;
+                cin.ignore();
+
+                switch(opt){
+                        case 1:
+                                break;
+                        
+                        case 2:
+                                return;
+                                break;
+                        
+                        default :
+                                cout << "\nWrong choice entered.. enter again? (y/n): ";
+                                cin >> userChoice;
+                                cin.ignore();
+                }                
+
+        }while(userChoice == 'y' || userChoice == 'Y');
+        
+}
+
 void accounts::ac(){
     int ch;
     cout<< endl << endl 
@@ -31,6 +60,8 @@ char opt = 'y';
     
         switch(ch){
             case -1: //return true;
+                cout << "\nHope to see you soon :)\n";
+                exit(0);
                     opt = 'n';
                     break;
 
@@ -61,11 +92,15 @@ void accounts::savingsAccount(){
         int ch;
         char Sch = 'y';
         
-        cout << endl << "Welcome to the savings bank section" << endl;
+        cout << endl  << endl<< "Welcome to the savings bank section" << endl;
         
         do{
-                cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n" << "Enter a choice: ";
+                cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n"
+                << "3.Go to main menu\n" <<
+                "4.Exit\n" << "Enter a choice: ";
                 cin >> ch;
+                cin.ignore();
+
                 switch (ch)
                 {
                 case 1:
@@ -73,6 +108,18 @@ void accounts::savingsAccount(){
                         Sch = 'n';
                         break;
                 
+                case 2: 
+                        login();
+                        options();
+                        break;
+
+                case 3:
+                        return;
+                        break;
+
+                case 4:
+                        exit(0);
+                        break;
 
                 default:
                         cout << "You've entered a wrong choice.. Enter again??(y/ n) :";
@@ -90,3 +137,4 @@ void accounts:: currentAccount(){
 void accounts:: createSavingsAccount(){
         create_acc();
 }
+
