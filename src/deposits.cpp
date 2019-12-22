@@ -24,6 +24,7 @@ using namespace std;
 
         cout<<"\nPRESS 1 FOR FIXED-DEPOSIT(FD)\nPRESS 2 FOR RECURRING-DEPOSIT\n";
         cin>>dep_choose;
+        //cin.ignore();
         
    repeat:
         switch (dep_choose)
@@ -114,3 +115,5 @@ using namespace std;
             }
     
                          }//end_of_ctor;
+
+     

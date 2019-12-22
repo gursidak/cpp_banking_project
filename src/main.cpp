@@ -17,13 +17,8 @@
 using namespace std;
 
 void start(){
-  //bool first = true;
-  
-  
-   person p;
-   p.welcome();
-   p.~person();
-   
+  person p;
+   p.welcome();  
 }
 
 int main()

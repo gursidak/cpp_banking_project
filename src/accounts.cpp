@@ -16,9 +16,10 @@
 
 using namespace std;
 
-void options(){
+void accounts::options(){
         char userChoice = 'y';
         int opt;
+        cout << endl << endl;
         do{
                 cout << "1.Show account details\n"
                 << "2.Go to main menu\n"
@@ -28,7 +29,7 @@ void options(){
                 cin.ignore();
 
                 switch(opt){
-                        case 1:
+                        case 1: show_account();
                                 break;
                         
                         case 2:
@@ -94,6 +95,8 @@ void accounts::savingsAccount(){
         
         cout << endl  << endl<< "Welcome to the savings bank section" << endl;
         
+
+
         do{
                 cout << "1.Open a new savings a/c\n" << "2.Log into your a/c\n"
                 << "3.Go to main menu\n" <<
@@ -106,7 +109,6 @@ void accounts::savingsAccount(){
                 case 1:
                         createSavingsAccount();
                         Sch = 'n';
-                        break;
                 
                 case 2: 
                         login();
@@ -120,7 +122,7 @@ void accounts::savingsAccount(){
                 case 4:
                         exit(0);
                         break;
-
+              
                 default:
                         cout << "You've entered a wrong choice.. Enter again??(y/ n) :";
                         cin >> Sch;
@@ -137,4 +139,3 @@ void accounts:: currentAccount(){
 void accounts:: createSavingsAccount(){
         create_acc();
 }
-

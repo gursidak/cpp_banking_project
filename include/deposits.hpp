@@ -13,8 +13,9 @@ using namespace std;
 class deposits : public person{
 
     public:
-
-    deposits();
+        //1 for deposit, 2 for withdraw
+        void deposit_withdraw(string accNo, int option);
+        deposits();
 
     protected:
 
@@ -23,7 +24,6 @@ class deposits : public person{
 
     int dep_choose;
     double  dep_amt;
-    //double fd_amt;
     int dep_time;
     string response;
 

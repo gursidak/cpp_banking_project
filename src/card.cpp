@@ -26,13 +26,14 @@ void card:: cardMenu(){
     int Copt;
     char Cch = 'y';
     
-    cin >> Copt;
+    
 
     do{
 
     cout << endl << "1.Credit Card\n" <<
                     "2.Debit Card\n" <<
                     "Provide your option: ";
+    cin >> Copt;
 
         switch (Copt)
         {
@@ -72,26 +73,51 @@ void card:: creditCard(){
 }
 
 void card:: debitCard(){
-    int dcChoice;
+    int cdChoice;
+    char custChoice;
+    
     cout << endl;
     cout << "1.Basic Debit Card\n";
 
     cout << "Enter your choice: ";
-    cin >> dcChoice;
+    cin >> cdChoice;
+
+    cout << "\nAre you an existing customer? (y/ n): ";
+    cin >> custChoice;
+
     
-
-}
-
-void card:: debitCardMenu(){
-
-}
-
-void card:: creditCardMenu(){
-
+    makeDebitCard(cdChoice, custChoice);
 }
 
 void card:: makeDebitCard(int type, char custChoice){
+    char Choice = 'y';
+    char confirm = 'y';
 
+    switch (type)
+    {
+    case 1:
+        cout << "\n\nCustomize your Debit Card \n\n";
+        break;
+    
+    default:
+        break;
+    }
+
+    cout << "\nBy providing your details in the next and previous step, you authorize bank you use your personal info. (y/ n):";
+    cin >> Choice;
+
+    if(Choice == 'y' || Choice == 'Y'){
+        if(custChoice == 'y'){
+            login();
+        }
+        else{
+            create_acc();
+            login();
+        }
+    }
+
+    if(d == true)
+        cout << endl << "Congratulations.. your debit card's request has been successfully registered..  you will soon receive a call from one of our exeutives" << endl  ; 
 }
 
 void card:: makeCreditCard(int type, char custChoice){
@@ -123,5 +149,8 @@ void card:: makeCreditCard(int type, char custChoice){
             login();
         }
     }
+
+    if(d == true)
+        cout << endl << "Congratulations.. your crebit card's request has been successfully registered..  you will soon receive a call from one of our exeutives" << endl  ;  
 
 }
